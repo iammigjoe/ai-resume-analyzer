@@ -1,10 +1,10 @@
 import {usePuterStore} from "~/lib/puter";
-import {useLocation, useNavigate} from "react-router";
 import {useEffect} from "react";
+import {useLocation, useNavigate} from "react-router";
 
 export const meta = () => ([
     { title: 'Resumind | Auth' },
-    { name: 'description', content: 'Log in dans ton compte' },
+    { name: 'description', content: 'Log into your account' },
 ])
 
 const Auth = () => {
@@ -18,12 +18,12 @@ const Auth = () => {
     }, [auth.isAuthenticated, next])
 
     return (
-        <main className="bg-[url('/images/bg-main.svg')] bg-cover min-h-screen flex items-center justify-center h-full">
-            <div className={"gradient-border shadow-lg"}>
+        <main className="bg-[url('/images/bg-auth.svg')] bg-cover min-h-screen flex items-center justify-center">
+            <div className="gradient-border shadow-lg">
                 <section className="flex flex-col gap-8 bg-white rounded-2xl p-10">
                     <div className="flex flex-col items-center gap-2 text-center">
-                        <h1>Bienvenue</h1>
-                        <h2>Log In Pour Continuer La Poursuite De Ton Job De Rêve</h2>
+                        <h1>Welcome</h1>
+                        <h2>Log In to Continue Your Job Journey</h2>
                     </div>
                     <div>
                         {isLoading ? (
@@ -32,13 +32,13 @@ const Auth = () => {
                             </button>
                         ) : (
                             <>
-                                {auth.isAuthenticated ?(
+                                {auth.isAuthenticated ? (
                                     <button className="auth-button" onClick={auth.signOut}>
-                                        <p>Log Out </p>
+                                        <p>Log Out</p>
                                     </button>
                                 ) : (
                                     <button className="auth-button" onClick={auth.signIn}>
-                                        <p>Log In </p>
+                                        <p>Log In</p>
                                     </button>
                                 )}
                             </>
